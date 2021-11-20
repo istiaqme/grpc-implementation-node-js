@@ -21,8 +21,8 @@ client.readTodos(null, (err, response) => {
 })
 
 const call = client.readTodosStream();
-call.on("data", item => {
-    console.log("received item from server " + JSON.stringify(item))
+call.on("data", item => { // here data is an event defined by user
+    console.log("received item from server " + JSON.stringify(item)); // getting stream data one by one
 })
 
-call.on("end", e => console.log("server done!"))
+call.on("end", e => console.log("server done!")); // end is gRPC defined event

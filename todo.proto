@@ -6,7 +6,7 @@ service Todo {
     // rpc service can not have no param
     rpc createTodo(TodoItem) returns (TodoItem);
     rpc readTodos(voidParams) returns (TodoItems);
-    rpc readTodosStream(voidParams) returns (stream TodoItem);
+    rpc readTodosStream(voidParams) returns (stream TodoItem); 
 }
 
 message voidParams {}

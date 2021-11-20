@@ -31,6 +31,6 @@ function readTodos(call, callback) {
     callback(null, {"items": todos})   
 }
 function readTodosStream(call, callback) {
-    todos.forEach(t => call.write(t));
-    call.end();
+    todos.forEach(t => call.write(t)); // write is used for buffer stream
+    call.end(); // a buffer stream should be ended
 }
