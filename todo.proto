@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package todoPackage;
+
+service Todo {
+    // rpc service can not have no param
+    rpc createTodo(TodoItem) returns (TodoItem);
+    rpc readTodos(voidParams) returns (TodoItems);
+    rpc readTodosStream(voidParams) returns (stream TodoItem);
+}
+
+message voidParams {}
+
+
+message TodoItem {
+    int32 id = 1;
+    string text = 2;
+}
+
+message TodoItems {
+    repeated TodoItem items = 1; // repeated is used for array buffers in gRPC
+}
